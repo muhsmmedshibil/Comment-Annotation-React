@@ -29,6 +29,7 @@ export function LeftSide({ comments, setComments, currentUser }) {
                 y: activeInput.y,
                 text: inputValue,
                 time: new Date().toISOString(),
+                status:'pending',
                 user: currentUser.name,
                 color: currentUser.color,
                 imageURL: currentUser.imageUrl,
@@ -80,7 +81,6 @@ The MERN stack is widely used for building modern, scalable, and high-performanc
                         className="input-wrapper"
                         style={{ left: activeInput.x, top: activeInput.y }}
                     >
-                        <div className="green-plus">+</div>
                         <input
                             autoFocus
                             type="text"
@@ -89,6 +89,7 @@ The MERN stack is widely used for building modern, scalable, and high-performanc
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={handleSave}
                         />
+                        <div className="green-plus">+</div>
                     </div>
                 )}
             </div>

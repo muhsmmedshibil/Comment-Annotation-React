@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 480px;
     padding: 24px 0;
-    border-bottom: 1px dashed #14c5e4; /* Light blue dashed divider */
+    border-bottom: 1px dashed #14c5e4;
     background: transparent;
 }
 
@@ -12,12 +12,12 @@
     align-items: flex-start;
 }
 
-/* AVATAR LOGIC */
 .avatar-container {
     flex-shrink: 0;
 }
 
-.avatar-img, .avatar-initials {
+.avatar-img,
+.avatar-initials {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -29,20 +29,27 @@
 }
 
 .avatar-initials {
-    background-color: #4A5568; /* Darker slate for initials */
+    background-color: #4A5568;
     color: white;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
 }
 
-/* CONTENT ALIGNMENT */
 .comment-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .meta-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-name-status {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -86,13 +93,54 @@
     cursor: pointer;
 }
 
-/* Exact Image Colors */
 .btn-accept {
-    background-color: #8A2BE2; /* Vibrant Purple */
+    background-color: #8A2BE2;
     color: white;
 }
 
 .btn-reject {
-    background-color: #FFF2F0; /* Pale Peach */
-    color: #FF5E4D; /* Salmon Red */
+    background-color: #FFF2F0;
+    color: #FF5E4D;
+}
+
+.statusTab {
+    display: inline-block;
+}
+
+.status-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: capitalize  ;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+/* Status Variants */
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status-accepted {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
 }

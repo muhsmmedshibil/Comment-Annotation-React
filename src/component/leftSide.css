@@ -1,41 +1,30 @@
 /* The Viewport/Wrapper */
 .document-viewer {
     background-color: #ffffff;
-    /* Light gray background makes the white "paper" pop */
     height: calc(100vh - 64px);
-    /* Use full height if it's a dedicated viewer */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* Start at top so scrolling feels natural */
     overflow: hidden;
+    cursor: crosshair;
 }
 
-/* The "Paper" */
 .document-content {
     background: white;
     width: 100%;
     max-width: 950px;
     overflow-y: auto;
     padding: 20px 3%;
-    /* Consistent internal spacing */
     border-right: 1px solid #e5e7eb;
     position: relative;
-
-    /* Aesthetics */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    /* Subtle rounding for a modern feel */
 }
 
-/* Optional: Custom Scrollbar for a cleaner look */
 .document-content::-webkit-scrollbar {
     display: none;
 }
 
-
-
-/* Annotation Group stays relative to its % position */
 .annotation-group {
     position: absolute;
     display: flex;
@@ -143,12 +132,10 @@
 
     .comment-bubble {
         width: 140px;
-        /* Narrower bubbles for phone screens */
         font-size: 11px;
     }
 
     .input-wrapper {
         transform: translate(-50%, -130%);
-        /* Float input above finger on mobile */
     }
 }

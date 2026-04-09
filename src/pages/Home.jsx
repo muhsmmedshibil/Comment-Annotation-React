@@ -19,7 +19,7 @@ export function Home() {
             <Navbar comments={comments} currentUser={currentUser} setCurrentUser={setCurrentUser} USERS_DATA={USERS_DATA} />
             <div className="container">
                 <LeftSide comments={comments} setComments={setComments} currentUser={currentUser} />
-                <RightSide comments={comments} currentUser={currentUser} />
+                <RightSide setComments={setComments} comments={comments} currentUser={currentUser} />
             </div>
 
         </main>

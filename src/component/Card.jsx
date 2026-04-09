@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Card.css';
 
-// ✅ Time Ago Function
 function getTimeAgo(time) {
     const now = new Date();
     const past = new Date(time);
@@ -17,29 +16,22 @@ function getTimeAgo(time) {
     return `${days} days ago`;
 }
 
-export function CommentCard({ comment, currentUser }) {
 
-    // ✅ use comment.time (not time)
+export function CommentCard({ comment, currentUser,setComments }) {
     const [displayTime, setDisplayTime] = useState(
         comment?.time ? getTimeAgo(comment.time) : ""
     );
 
     useEffect(() => {
         if (!comment?.time) return;
-
         const interval = setInterval(() => {
             setDisplayTime(getTimeAgo(comment.time));
-        }, 60000); // update every 1 min
-
+        }, 60000);
         return () => clearInterval(interval);
     }, [comment?.time]);
 
-    // Safety check
-    if (!comment || !comment.text) {
-        return null;
-    }
+    if (!comment || !comment.text) return null;
 
-    // Initials
     const initials = comment.user
         .trim()
         .split(/\s+/)
@@ -48,24 +40,35 @@ export function CommentCard({ comment, currentUser }) {
         .toUpperCase()
         .substring(0, 2);
 
-    // Current user check
-    const isCurrentUser =
-        currentUser?.id &&
-        comment?.userId &&
-        currentUser.id === comment.userId;
+    const isCurrentUser = currentUser?.id && comment?.userId && currentUser.id === comment.userId;
+
+
+    const onAccept = (commentId) => {
+        setComments(prevComments =>
+            prevComments.map(comment =>
+                comment.id === commentId
+                    ? { ...comment, status: 'Accepted' }
+                    : comment
+            )
+        );
+    };
+
+    const onReject = (commentId) => {
+        setComments(prevComments =>
+            prevComments.map(comment =>
+                comment.id === commentId
+                    ? { ...comment, status: 'Rejected' }
+                    : comment
+            )
+        );
+    };
 
     return (
         <div className="comment-wrapper">
             <div className="comment-flex">
-
-                {/* Avatar */}
                 <div className="avatar-container">
                     {comment.imageURL ? (
-                        <img
-                            src={comment.imageURL}
-                            alt={`${comment.user}'s avatar`}
-                            className="avatar-img"
-                        />
+                        <img src={comment.imageURL} alt={`${comment.user}'s avatar`} className="avatar-img" />
                     ) : (
                         <div className="avatar-initials" style={{ backgroundColor: `#${comment.color || 'ccc'}` }}>
                             {initials}
@@ -73,40 +76,35 @@ export function CommentCard({ comment, currentUser }) {
                     )}
                 </div>
 
-                {/* Content */}
                 <div className="comment-content">
                     <div className="meta-row">
-                        <span className="user-name">{comment.user}</span>
-
-                        {isCurrentUser && (
-                            <span className="user-badge"> (You)</span>
-                        )}
-
-                        {comment.time && (
-                            <>
-                                <span className="dot">•</span>
-
-                                {/* ✅ Use calculated time */}
-                                <span className="timestamp">
-                                    {displayTime}
+                        <div className="user-name-status">
+                            <span className="user-name">{comment.user}</span>
+                            {isCurrentUser && <span className="user-badge"> (You)</span>}
+                            {comment.time && (
+                                <>
+                                    <span className="dot">•</span>
+                                    <span className="timestamp">{displayTime}</span>
+                                </>
+                            )}
+                        </div>
+                        <div className="statusTab">
+                            {comment.status && (
+                                <span className={`status-label status-${comment.status.toLowerCase()}`}>
+                                    {comment.status}
                                 </span>
-                            </>
-                        )}
+                            )}
+                        </div>
+
                     </div>
 
                     <p className="message-body">{comment.text}</p>
 
                     <div className="button-row">
-                        <button
-                            className="btn btn-accept"
-                            onClick={() => console.log('Accepted', comment.id)}
-                        >
+                        <button className="btn btn-accept" onClick={() => onAccept(comment.id)}>
                             Accept
                         </button>
-                        <button
-                            className="btn btn-reject"
-                            onClick={() => console.log('Rejected', comment.id)}
-                        >
+                        <button className="btn btn-reject" onClick={() => onReject(comment.id)}>
                             Reject
                         </button>
                     </div>

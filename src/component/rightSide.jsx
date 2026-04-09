@@ -1,7 +1,7 @@
 import { CommentCard } from './Card';
 import './rightSide.css';
 
-export function RightSide({ comments = [], currentUser }) {
+export function RightSide({ comments = [], currentUser,setComments }) {
     // 1. Check if comments exists and has items
     const hasComments = comments && comments.length > 0;
     console.log("RightSide Rendered with comments:", comments); // Debug log
@@ -18,6 +18,7 @@ export function RightSide({ comments = [], currentUser }) {
                             key={comment.id}
                             comment={comment}
                             currentUser={currentUser}
+                            setComments={setComments}
                         />
                     ))
                 ) : (
