@@ -18,7 +18,7 @@ export function LeftSide({ comments, setComments, currentUser }) {
         const y = e.clientY - rect.top;
 
         setActiveInput({ x, y });
-        setInputValue(""); // Clear previous draft
+        setInputValue(""); 
     };
 
     const handleSave = (e) => {
@@ -45,17 +45,17 @@ export function LeftSide({ comments, setComments, currentUser }) {
             <div className="document-content" ref={containerRef} onClick={handleDocumentClick}>
                 <h2>What is the MERN stack?</h2>
 
-<p>
-The MERN stack is a modern web development framework that allows developers to build full-stack applications using only JavaScript. It combines four powerful technologies: MongoDB, Express.js, React, and Node.js. These tools work together to handle everything from the user interface to server-side logic and database management. Because all components use JavaScript, development becomes faster and more consistent.
-</p>
+                <p>
+                    The MERN stack is a modern web development framework that allows developers to build full-stack applications using only JavaScript. It combines four powerful technologies: MongoDB, Express.js, React, and Node.js. These tools work together to handle everything from the user interface to server-side logic and database management. Because all components use JavaScript, development becomes faster and more consistent.
+                </p>
 
-<p>
-Each part of MERN has a specific role. MongoDB stores data in a flexible, JSON-like format, making it easy to manage and scale. Express.js works on top of Node.js to create APIs and handle server-side operations efficiently. React is used on the frontend to build fast, dynamic, and interactive user interfaces. Node.js allows developers to run JavaScript on the server, enabling smooth communication between the frontend and backend. Together, they create a seamless flow of data through APIs.
-</p>
+                <p>
+                    Each part of MERN has a specific role. MongoDB stores data in a flexible, JSON-like format, making it easy to manage and scale. Express.js works on top of Node.js to create APIs and handle server-side operations efficiently. React is used on the frontend to build fast, dynamic, and interactive user interfaces. Node.js allows developers to run JavaScript on the server, enabling smooth communication between the frontend and backend. Together, they create a seamless flow of data through APIs.
+                </p>
 
-<p>
-The MERN stack is widely used for building modern, scalable, and high-performance web applications. Developers prefer it because it simplifies development by using a single programming language across the entire project. It also supports rapid development and easy maintenance. Overall, MERN is a powerful and efficient choice for creating full-stack applications, especially for startups and modern web platforms.
-</p>
+                <p>
+                    The MERN stack is widely used for building modern, scalable, and high-performance web applications. Developers prefer it because it simplifies development by using a single programming language across the entire project. It also supports rapid development and easy maintenance. Overall, MERN is a powerful and efficient choice for creating full-stack applications, especially for startups and modern web platforms.
+                </p>
 
                 {/* <h2>What is MongoDB?</h2> */}
 
