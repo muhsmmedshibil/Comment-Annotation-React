@@ -1,0 +1,98 @@
+.comment-wrapper {
+    width: 100%;
+    max-width: 480px;
+    padding: 24px 0;
+    border-bottom: 1px dashed #14c5e4; /* Light blue dashed divider */
+    background: transparent;
+}
+
+.comment-flex {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* AVATAR LOGIC */
+.avatar-container {
+    flex-shrink: 0;
+}
+
+.avatar-img, .avatar-initials {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    cuyrsor: pointer;
+}
+
+.avatar-initials {
+    background-color: #4A5568; /* Darker slate for initials */
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* CONTENT ALIGNMENT */
+.comment-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111;
+}
+
+.dot {
+    color: #A0AEC0;
+}
+
+.timestamp {
+    color: #A0AEC0;
+    font-size: 14px;
+}
+
+.message-body {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+/* BUTTONS */
+.button-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Exact Image Colors */
+.btn-accept {
+    background-color: #8A2BE2; /* Vibrant Purple */
+    color: white;
+}
+
+.btn-reject {
+    background-color: #FFF2F0; /* Pale Peach */
+    color: #FF5E4D; /* Salmon Red */
+}

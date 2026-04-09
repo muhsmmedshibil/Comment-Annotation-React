@@ -1,0 +1,35 @@
+.main-container {
+    width: 100%;
+    height: calc(100vh - 72px);
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;   /* stack vertically */
+        height: auto;
+        overflow: visible;
+        padding: 10px;
+    }
+
+    .container > * {
+        width: 100%;
+    }
+}
+
+/* ---------------- TABLET ---------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column; 
+        height: auto;
+    }
+}
+

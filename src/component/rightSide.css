@@ -1,0 +1,61 @@
+/* --- Right Section: Comments --- */
+.comment-panel {
+    flex: 1;
+    /* background-color: #0866c5; */
+    padding: 20px;
+    overflow-y: auto;
+    /* height: 100vh; */
+    overflow-y: auto;
+    
+}
+.comment-panel::-webkit-scrollbar {
+    display: none;
+}
+.comment-panel h3 {
+    color: #29292b;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.empty-state-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    /* Makes it stand out slightly from a pure white background */
+    background-color: #f9fafb; 
+    border: 2px dashed #e5e7eb;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: #f0f7ff; /* Soft blue tint */
+    color: #3b82f6;      /* Brand blue */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Subtle glow */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.empty-state-container h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #374151; /* Dark gray */
+    font-weight: 600;
+}
+
+.empty-state-container p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #6b7280; /* Muted gray */
+    max-width: 200px;
+    line-height: 1.4;
+}
