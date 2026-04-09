@@ -1,7 +1,7 @@
 import './Home.css'
 import { Navbar } from "../component/navbar";
-import { LeftSide } from '../Component/leftSide';
-import { RightSide } from '../Component/rightSide';
+import { LeftSide } from '../component/leftSide';
+import { RightSide } from '../component/rightSide';
 import { useState } from 'react';
 
 export function Home() {
